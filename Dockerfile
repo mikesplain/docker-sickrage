@@ -10,8 +10,9 @@ RUN apk -U upgrade && \
         ca-certificates \
         py2-pip ca-certificates git python py-libxml2 py-lxml \
         make gcc g++ python-dev openssl-dev libffi-dev unrar \
+        openssl
         && \
-    pip --no-cache-dir install --upgrade setuptools && \
+    pip --no-cache-dir install --upgrade setuptools tzlocal && \
     pip --no-cache-dir install --upgrade pyopenssl cheetah requirements && \
     git clone --depth 1 https://github.com/SickRage/SickRage.git /sickrage && \
     apk del make gcc g++ python-dev && \
